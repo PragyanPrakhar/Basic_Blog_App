@@ -1,6 +1,6 @@
 const express = require('express');
 const app=express();
-const PORT=8000;
+const PORT=4444;
 const path = require('path');
 app.use(express.urlencoded({extended:true}));
 //Express will be able to understand the data in the url encoded form.
@@ -35,7 +35,21 @@ app.get("/",(req,res)=>{
 
 app.get("/posts",(req,res)=>{
     res.render("index.ejs",{posts});
+});
+
+app.get("/posts/new",(req,res)=>{
+    res.render("new.ejs");
+});
+
+app.post("/posts",(req,res)=>{
+    let {username, content}=req.body;
+    posts.push({username,content});
+    // res.send("post request working");
+    res.redirect("/posts");
 })
+
+
+
 
 app.listen(PORT,()=>{
     console.log(`Server is running on port ${PORT}`);
