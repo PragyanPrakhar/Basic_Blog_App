@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Posts</title>
-    <link rel="stylesheet" href="/styles.css" />
-</head>
-<body>
-    <h1>Quora Posts</h1>
-   <% for(post of posts){  %>
-    <div class="post">
-        <h3 class="username">@ <%= post.username %></h3>
-        <h4 class="content"><%= post.content %></h4>
-        <br>
-        <a href="http://localhost:5252/posts/<%=post.id%>">view post in detail.</a>
-    </div>
-    <%} %>
-
-    <br>
-    <br>
-    <br>
-    <a href="http://localhost:5252/posts/new">Create new Posts</a>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>All Posts</title>
+        <link rel="stylesheet" href="/styles.css" />
+    </head>
+    <body>
+        <h1>Quora Posts</h1>
+        <% for(post of posts){ %>
+        <div class="post">
+            <h3 class="username">@ <%= post.username %></h3>
+            <h4 class="content"><%= post.content %></h4>
+            <br />
+            <a href="http://localhost:5252/posts/<%=post.id%>"
+                >view post in detail.</a
+            >
+        </div>
+        <%} %>
+        <br />
+        <br />
+        <br />
+        <a href="http://localhost:5252/posts/new">Create new Posts</a>
+    </body>
 </html>
